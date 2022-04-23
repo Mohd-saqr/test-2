@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th, td {
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #D6EEEE;
+}
+
+    </style>
+
+</head>
+<body>
+<h1> Student Lists </h1>
+<table style="width:80%">
+    <ul>
+        <tr>
+            <th>ID</th>
+            <th> Full Name</th>
+            <th>username</th>
+            <th>update </th>
+            <th>delete </th>
+        </tr>
+    </ul>
+    <ul th:each="one: ${adminList}">
+        <tr>
+            <td><span th:text="${one.id}"></span></td>
+            <td><span th:text="${one.fullName}"></span></td>
+            <td><span th:text="${one.username}"></span></td>
+            <!--            <td><form method ="GET" th:action=""><input type="submit" value="UPDATE"/></form></td>-->
+<!--            <td><form method ="DELETE" th:action="'/deletestd/'+${one.id}"><input type="submit" value="delete"/></form></td>-->
+
+
+        </tr>
+    </ul>
+</table>
+</body>
+</html>

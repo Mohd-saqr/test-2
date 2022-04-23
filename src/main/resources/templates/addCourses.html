@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml" xmlns:sec="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Insert title here</title>
+    <link th:href="@{/create.css}" rel="stylesheet"/>
+
+    <div sec:authorize="hasAnyAuthority('ADMIN')">
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/signup/instructor">Create Instructor</a></li>
+            <li><a href="/signup/student">Create Student</a></li>
+            <li><a href="/signup">Create Admin</a></li>
+            <li><a href="/courses">Add courses</a></li>
+            <li><a href="/students">Students</a></li>
+            <li><a href="/instructors">Instructors</a></li>
+            <li><a href="/logout">Logout</a></li>
+        </ul>
+    </div>
+</head>
+<body>
+
+<form action="/addcourse" method="POST">
+    <fieldset>
+        <legend>Create new course:</legend>
+
+        <label for="name">Name of course</label>
+        <input type="text" id="name" name="name"  placeholder="name" required="" autofocus=""><br><br><br><br>
+
+        <label for="classRoom">ClassRoom</label>
+        <input type="text" id="classRoom" name="classRoom"  placeholder="classRoom" required=""><br><br><br><br>
+
+        <label for="instructorName">Instructor Name</label>
+        <input type="text" id="instructorName" name="instructorName"  placeholder="instructorName" required=""><br><br><br><br>
+
+        <label for="time">Time</label>
+        <input type="text" id="time" name="time" placeholder="time" required="" autofocus=""><br><br><br><br>
+
+        <label for="days">Days</label>
+        <input type="text" id="days" name="days" placeholder="days" required="" autofocus=""><br><br><br><br>
+
+    <button type="submit">create course</button>
+    </fieldset>
+</form>
+</body>
+</html>

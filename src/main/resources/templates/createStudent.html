@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml" xmlns:sec="http://www.w3.org/1999/xhtml">
+<head>
+    <link th:href="@{/create.css}" rel="stylesheet"/>
+    <meta charset="UTF-8">
+    <title>Sign Up Page</title>
+
+    <div sec:authorize="hasAnyAuthority('ADMIN')">
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/signup/instructor">Create Instructor</a></li>
+            <li><a href="/signup/student">Create Student</a></li>
+            <li><a href="/signup">Create Admin</a></li>
+            <li><a href="/courses">Add courses</a></li>
+            <li><a href="/students">Students</a></li>
+            <li><a href="/instructors">Instructors</a></li>
+            <li><a href="/logout">Logout</a></li>
+        </ul>
+    </div>
+
+    <div sec:authorize="hasAnyAuthority('STUDENT')">
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/student">Profile</a></li>
+            <li><a href="/courses">Courses</a></li>
+            <li><a href="/logout">Logout</a></li>
+        </ul>
+    </div>
+
+
+    <div sec:authorize="hasAnyAuthority('INSTRUCTOR')">
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/instructor">Profile</a></li>
+            <li><a href="/courses">Courses</a></li>
+            <li><a href="/logout">Logout</a></li>
+        </ul>
+    </div>
+</head>
+<body>
+<form action="/signup/student" method="post">
+    <fieldset>
+    <legend>Add a new student:</legend>
+    <label for="studentName">Full Name</label>
+    <input type="text" name="studentName" id="studentName" autofocus><br><br><br><br>
+
+    <label for="username">Username</label>
+    <input type="text" name="username" id="username"><br><br><br><br>
+
+    <label for="password">Password</label>
+    <input type="password" name="password" id="password"><br><br><br><br>
+
+    <label for="email">Email</label>
+    <input type="email" name="email" id="email"><br><br><br><br>
+
+    <label for="dayOfBirth">Birth of day</label>
+    <input type="text" name="dayOfBirth" id="dayOfBirth"><br><br><br><br>
+
+    <label for="telephone">Telephone</label>
+    <input type="text" name="telephone" id="telephone"><br><br><br><br>
+
+    <input type="submit"><br><br><br><br>
+    </fieldset>
+</form>
+</body>
+</html>
+

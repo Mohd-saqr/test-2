@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml" xmlns:sec="http://www.w3.org/1999/xhtml">
+<head>
+<meta charset="UTF-8">
+<title>Home Page</title>
+    <link th:href="@{/home.css}" rel="stylesheet"/>
+</head>
+<body>
+
+<div sec:authorize="hasAnyAuthority('ADMIN')">
+    <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/signup/instructor">Create Instructor</a></li>
+        <li><a href="/signup/student">Create Student</a></li>
+        <li><a href="/signup">Create Admin</a></li>
+        <li><a href="/courses">Add courses</a></li>
+        <li><a href="/students">Students</a></li>
+        <li><a href="/instructors">Instructors</a></li>
+        <li><a href="/logout">Logout</a></li>
+    </ul>
+</div>
+
+<div sec:authorize="hasAnyAuthority('STUDENT')">
+    <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/student">Profile</a></li>
+        <li><a href="/courses">courses</a></li>
+        <li><a href="/logout">Logout</a></li>
+    </ul>
+</div>
+
+<div sec:authorize="hasAnyAuthority('INSTRUCTOR')">
+    <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href ="/instructor">Profile</a></li>
+        <li><a href="/courses">courses</a></li>
+        <li><a href="/logout">Logout</a></li>
+    </ul>
+</div>
+
+<div>
+    <div class = "content">
+    <h1>Pioneers University</h1>
+    <p>Science is the foundation stone for progress and development taking place in human life,
+    the Pioneers University (PU), which was founded in 2000, aims to become a global university excelling in pedagogy, research,
+    and innovation and advancing in global standing, it has offered a wide choice of academic programs for
+    students who can choose from more than 40 Programs.
+    PU offers 50 bachelors in different programs in Medicine, Dentistry, Pharmacy,Nursing, Rehabilitation Science, Science, Agriculture, Engineering, Information Technology, Educational Sciences, law, Physical Education, Arts and Design,
+    International Studies, Foreign Languages.</p></br></br>
+    </div>
+
+    <div class = "content-one">
+    <p>At graduate level, PU provides 18 doctoral Programs,
+        and 30 master programs. Since its foundation, the number of PU graduates have exceeded 30.000 graduates around the world,
+        and PU’s employment reputation is 87 worldwide according to QS World Universities Ranking 2018.</p>
+    </div>
+</div>
+</body>
+</html>

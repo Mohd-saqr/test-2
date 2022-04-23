@@ -1,0 +1,18 @@
+body {
+  background-image: url('https://buildings.honeywell.com/content/dam/hbtbt/en/images/horizontal/street-view-buildings-2880x1440.jpg');
+
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+    width = 100%
+}
+
+     form {
+       position: fixed;
+       top: 50%;
+       left: 50%;
+       transform: translate(-50%, -50%);
+     }
+
+     h1{text-align: center}
+      h2{text-align: center}
